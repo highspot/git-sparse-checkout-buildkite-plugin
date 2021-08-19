@@ -1,0 +1,8 @@
+name: Git Sparse Checkout
+description: Git parital checkout and git sparse-checkout of a Github repository 
+author: https://github.com/highspot
+requirements: []
+configuration:
+  properties:
+    paths:
+      type: string

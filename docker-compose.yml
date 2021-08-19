@@ -1,0 +1,7 @@
+version: '3'
+services:
+  lint:
+    image: buildkite/plugin-linter
+    command: ['--id', 'https://github.com/highspot/git-sparse-checkout-buildkite-plugin']
+    volumes:
+      - ".:/plugin:ro"
