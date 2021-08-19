@@ -10,8 +10,10 @@ Add the following to your `pipeline.yml`:
 steps:
   - command: echo git-sparse-checkout
     plugins:
-      - https://github.com/highspot/git-sparse-checkout-buildkite-plugin#v0.0.1:
-          paths: "dir1 dir2"
+      - highspot/git-sparse-checkout#v0.0.1:
+          paths: 
+            - "dir1"
+            - "dir2"
 ```
 
 ## Configuration
