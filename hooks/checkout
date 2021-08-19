@@ -3,7 +3,7 @@
 set -euo pipefail
 
 echo "Working directory: $(pwd)"
-echo "Sparse checking out the following paths: ${BUILDKITE_PLUGIN_GIT_SPARSE_CHECKOUT_PATHS[*]}"
+echo "Sparse checking out the following paths: ${BUILDKITE_PLUGIN_GIT_SPARSE_CHECKOUT_PATHS}"
 
 # Make sure any existing build directory is cleaned up
 cd ..
@@ -15,7 +15,7 @@ cd "${BUILDKITE_PIPELINE_NAME}" || exit 1
 # Initialize the sparse-checkout step, check out the build branch and set the desired dirs
 git sparse-checkout init --cone
 git checkout "${BUILDKITE_BRANCH}"
-git sparse-checkout set "${BUILDKITE_PLUGIN_GIT_SPARSE_CHECKOUT_PATHS[*]}"
+git sparse-checkout set "${BUILDKITE_PLUGIN_GIT_SPARSE_CHECKOUT_PATHS}"
 
 # Notify that the sparse-checkout step completed
-buildkite-agent annotate "Git sparse-checkout of the following paths: ${BUILDKITE_PLUGIN_GIT_SPARSE_CHECKOUT_PATHS[*]}"
+buildkite-agent annotate "Git sparse-checkout of the following paths: ${BUILDKITE_PLUGIN_GIT_SPARSE_CHECKOUT_PATHS}"

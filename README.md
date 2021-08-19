@@ -11,14 +11,12 @@ steps:
   - command: echo git-sparse-checkout
     plugins:
       - highspot/git-sparse-checkout#v0.0.1:
-          paths: 
-            - "dir1"
-            - "dir2"
+          paths: "path1 path2"
 ```
 
 ## Configuration
 
-### `paths` (Required, list)
+### `paths` (Required, string of space separated directory paths)
 
 List of directory paths to sparse checkout.
 
